@@ -43,3 +43,9 @@ db.reviews = require('./reviewModels.js')(sequilize,DataTypes)
 
 //pour ne pas creer la table encore et encore si elle n est pas trouve
 db.sequilize.sync({force:false})
+.then(()=>{
+      console.log('yes re-sync done');
+})
+
+
+module.exports = db
