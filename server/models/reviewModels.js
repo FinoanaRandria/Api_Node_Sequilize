@@ -1,4 +1,18 @@
-const {DataTypes} = require('sequilize/types')
-const {sequilize} = require('.')
 
-module.exports = (sequilize,DataTypes)
+module.exports = (sequilize,DataTypes) =>{
+   
+    const Review = sequilize.define('review',{
+
+      
+       rating:{
+            type:DataTypes.INTEGER
+       },
+        description:{
+            type:DataTypes.TEXT
+       } 
+
+
+
+    })
+        return Review
+}
