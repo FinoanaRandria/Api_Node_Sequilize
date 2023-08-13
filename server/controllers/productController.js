@@ -33,3 +33,15 @@ const getAllProducts = async(req,res)=>{
  res.status(200).send(products)
 
 }
+
+
+// . obtenir un seul  produit de la table
+
+const getOneProducts = async(req,res)=>{
+                                      //ici la logique
+
+    let id = req.params.id                               
+    let products = await Product.findOne({where : {id:id}})
+    res.status(200).send(products)
+   
+   }
