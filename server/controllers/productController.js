@@ -52,4 +52,6 @@ const id = req.params.id
 
 const updateProducts = async(req,res)=>{
     const product = await Product.update(req.body, {where: {id:id}})
+
+    res.status(200).send(product)
 }
