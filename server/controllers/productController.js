@@ -72,7 +72,7 @@ const deleteProducts = async(req,res)=>{
 
    //juste un exemple : affichier ou selection les poriduit qui sont publier  / =true /
 
-   const publishedProduct = async(req,res)=>{
+   const getPublishedProduct = async(req,res)=>{
    
       const products = await Product.findAll({where:{ published:true}})
       res.status(200).send(products) 
@@ -86,6 +86,7 @@ const deleteProducts = async(req,res)=>{
    getAllProducts,
    getOneProducts,
    updateProducts,
-   deleteProducts
+   deleteProducts,
+   getPublishedProduct,
 
    }
