@@ -64,7 +64,28 @@ const deleteProducts = async(req,res)=>{
                                       //ici la logique
 
     let id = req.params.id                               
-    let products = await Product.findOne({where : {id:id}})
-    res.status(200).send(products)
+    await Product.destroy( {where:{id:id}})
+    res.status(200).send('Porduct is deleted!')
    
+   }
+
+
+   //juste un exemple : affichier ou selection les poriduit qui sont publier  / =true /
+
+   const publishedProduct = async(req,res)=>{
+   
+      const products = await Product.findAll({where:{ published:true}})
+      res.status(200).send(products) 
+
+   }
+
+
+
+   module.exports = {
+   addProduct,
+   getAllProducts,
+   getOneProducts,
+   updateProducts,
+   deleteProducts
+
    }
