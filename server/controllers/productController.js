@@ -25,7 +25,7 @@ res.status(200).send(product)
 
 }
 
-// . obtenir tout les produit de la table
+//2 . obtenir tout les produit de la table
 
 const getAllProducts = async(req,res)=>{
 
@@ -35,7 +35,7 @@ const getAllProducts = async(req,res)=>{
 }
 
 
-// . obtenir un seul  produit de la table
+//3 . obtenir un seul  produit de la table
 
 const getOneProducts = async(req,res)=>{
                                       //ici la logique
@@ -46,7 +46,7 @@ const getOneProducts = async(req,res)=>{
    
    }
 
-// . mettre a jour le produit 
+//4 . mettre a jour le produit 
 
 const id = req.params.id
 
@@ -55,3 +55,16 @@ const updateProducts = async(req,res)=>{
 
     res.status(200).send(product)
 }
+
+
+
+//5 . obtenir un seul  produit de la table
+
+const deleteProducts = async(req,res)=>{
+                                      //ici la logique
+
+    let id = req.params.id                               
+    let products = await Product.findOne({where : {id:id}})
+    res.status(200).send(products)
+   
+   }
