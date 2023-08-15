@@ -71,7 +71,7 @@ const deleteProducts = async(req,res)=>{
    }
 
 
-   //juste un exemple : affichier ou selection les poriduit qui sont publier  / =true /
+// 6 juste un exemple : affichier ou selection les poriduit qui sont publier  / =true /
 
    const getPublishedProduct = async(req,res)=>{
    
